@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.configuration.xml.reload" value="true"/>
+<constant name="struts.i18n.reload" value="true"/>
+<constant name="struts.devMode" value="true"/>
+<constant name="struts.action.extension" value="action,do"/><!-- action的后缀可以action或者do -->
+<constant name="struts.custom.i18n.resources" value="language"/>
+<constant name="struts.multipart.maxSize" value="90000000"/><!-- 设计上传大小 -->
+<constant name="struts.i18n.encoding" value="UTF-8"/>
+<constant name="struts.locale" value="zh_CN"/>
+<!-- <constant name="struts.enable.DynamicMethodInvocation" value="false"/>关闭动态调用
+
+login!dongTaiDiaoYong.action动态调用
+ -->
+<package name="ycf" namespace="/" extends="struts-default">
+<action name="*" class="ua" method="{1}" >
+<result type="redirectAction" name="success">find</result>
+<result name="show">show.jsp</result>
+</action>
+</package>
+</struts>    
